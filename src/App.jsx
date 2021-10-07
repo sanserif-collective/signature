@@ -1,3 +1,5 @@
+import './sanserif.png'
+
 import { useState } from 'react'
 import Field from '../src/components/Field'
 
