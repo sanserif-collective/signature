@@ -2,6 +2,8 @@ import { useState } from 'react'
 // @ts-ignore
 import logo from '../sanserif.png'
 import Field from '../src/components/Field'
+// @ts-ignore
+import logo from './sanserif.png'
 
 function App() {
   const [firstname, setFirstname] = useState('Adonis')
@@ -111,7 +113,7 @@ function App() {
                             <td>©</td>
                             <td width="48"></td>
                             <td>
-                              <a href="tel:+32493164610">
+                              <a href={`tel:${phone}`}>
                                 {phone}
                               </a>
                             </td>
