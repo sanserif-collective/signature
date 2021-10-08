@@ -1,4 +1,6 @@
 import { useState } from 'react'
+// @ts-ignore
+import logo from '../sanserif.png'
 import Field from '../src/components/Field'
 
 function App() {
@@ -38,7 +40,12 @@ function App() {
                 <tbody>
                   <tr>
                     <td>
-                      <img width="176" src="/sanserif.png" style={{ display: 'block' }} />
+                      <img
+                        width="176"
+                        src={logo}
+                        style={{ display: 'block' }}
+                        alt="Sanserif Logo"
+                      />
                     </td>
                     <td width="64"></td>
                     <td
