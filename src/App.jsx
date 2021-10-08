@@ -16,23 +16,30 @@ export default () => {
         }}
       >
         <Field
-          name="Nom"
-          onChange={({ target }) => setLastname(target.value)}
-        />
-        <Field
           name="Prénom"
+          value={firstname}
           onChange={({ target }) => setFirstname(target.value)}
         />
         <Field
+          name="Nom"
+          value={lastname}
+          onChange={({ target }) => setLastname(target.value)}
+        />
+        <Field
           name="Rôle"
+          value={role}
           onChange={({ target }) => setRole(target.value)}
         />
         <Field
           name="Téléphone"
+          value={phone}
           onChange={({ target }) => setPhone(target.value)}
         />
       </form>
-      <table width="100%" style={{ backgroundColor: '#EAEAEA' }}>
+      <table style={{
+          backgroundColor: '#EAEAEA',
+          minWidth: '500px'
+        }}>
         <tbody>
           <tr>
             <td style={{ padding: '16px' }}>
