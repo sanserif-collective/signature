@@ -3,7 +3,6 @@ import { useState } from 'react'
 import logo from '../sanserif.png'
 import Field from '../src/components/Field'
 // @ts-ignore
-import logo from './sanserif.png'
 
 function App() {
   const [firstname, setFirstname] = useState('Adonis')
