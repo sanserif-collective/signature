@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 // @ts-ignore
 import logo from '../sanserif.png'
 import Field from '../src/components/Field'
@@ -8,13 +8,10 @@ export default () => {
   const [lastname, setLastname] = useState('Karpowicz')
   const [role, setRole] = useState('Graphic Designer & Art Director')
   const [phone, setPhone] = useState('+32 493 16 46 10')
+
   return (
     <>
-      <form
-        style={{
-          userSelect: 'none'
-        }}
-      >
+      <form style={{ userSelect: 'none' }}>
         <Field
           name="Prénom"
           value={firstname}
@@ -36,10 +33,7 @@ export default () => {
           onChange={({ target }) => setPhone(target.value)}
         />
       </form>
-      <table style={{
-          backgroundColor: '#EAEAEA',
-          minWidth: '500px'
-        }}>
+      <table style={{ backgroundColor: '#EAEAEA' }}>
         <tbody>
           <tr>
             <td style={{ padding: '16px' }}>
