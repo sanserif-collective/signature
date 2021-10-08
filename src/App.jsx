@@ -2,9 +2,8 @@ import { useState } from 'react'
 // @ts-ignore
 import logo from '../sanserif.png'
 import Field from '../src/components/Field'
-// @ts-ignore
 
-function App() {
+export default () => {
   const [firstname, setFirstname] = useState('Adonis')
   const [lastname, setLastname] = useState('Karpowicz')
   const [role, setRole] = useState('Graphic Designer & Art Director')
@@ -33,7 +32,7 @@ function App() {
           onChange={({ target }) => setPhone(target.value)}
         />
       </form>
-      <table style={{ backgroundColor: '#EAEAEA', tableLayout: 'fixed' }}>
+      <table width="100%" style={{ backgroundColor: '#EAEAEA' }}>
         <tbody>
           <tr>
             <td style={{ padding: '16px' }}>
@@ -102,7 +101,7 @@ function App() {
                         href="https://sanserif.be"
                         target="_blank"
                       >
-                        www.sanserif.be
+                        sanserif.be
                       </a>
                     </td>
                     <td>
@@ -112,9 +111,7 @@ function App() {
                             <td>©</td>
                             <td width="48"></td>
                             <td>
-                              <a href={`tel:${phone}`}>
-                                {phone}
-                              </a>
+                              <a href={`tel:${phone}`}>{phone}</a>
                             </td>
                           </tr>
                         </tbody>
@@ -130,5 +127,3 @@ function App() {
     </>
   )
 }
-
-export default App
