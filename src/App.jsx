@@ -65,7 +65,7 @@ export default () => {
                     <td>
                       <img
                         width="176"
-                        src={logo}
+                        src={`https://signature-rose.vercel.app${logo}`}
                         style={{ display: 'block' }}
                         alt="Sanserif Logo"
                       />
