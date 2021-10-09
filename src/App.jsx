@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 // @ts-ignore
 import logo from '../sanserif.png'
 import Field from '../src/components/Field'
@@ -9,9 +9,25 @@ export default () => {
   const [role, setRole] = useState('Graphic Designer & Art Director')
   const [phone, setPhone] = useState('+32 493 16 46 10')
 
+  const signature = useRef(null)
+  const [width, setWidth] = useState('')
+  const [throttle, setThrottle] = useState(null)
+
+  useEffect(() => setWidth(`${signature.current.offsetWidth}px`), [])
+
   return (
     <>
-      <form style={{ userSelect: 'none' }}>
+      <form
+        style={{ userSelect: 'none' }}
+        onChange={() => {
+          window.clearTimeout(throttle)
+          setWidth('auto')
+          setThrottle(() => window.setTimeout(
+            () => setWidth(`${signature.current.offsetWidth}px`)),
+            1000
+          )
+        }}
+      >
         <Field
           name="Prénom"
           value={firstname}
@@ -33,7 +49,13 @@ export default () => {
           onChange={({ target }) => setPhone(target.value)}
         />
       </form>
-      <table style={{ backgroundColor: '#EAEAEA' }}>
+      <table
+        ref={signature}
+        style={{
+          backgroundColor: '#EAEAEA',
+          minWidth: width
+        }}
+      >
         <tbody>
           <tr>
             <td style={{ padding: '16px' }}>
@@ -125,6 +147,19 @@ export default () => {
           </tr>
         </tbody>
       </table>
+      <div
+        style={{
+          marginTop: '40px',
+          userSelect: 'none'
+        }}
+      >
+        <p>Pour ajouter la signature&nbsp;:</p>
+        <ol>
+          <li>CTRL + A ou CMD + A (Tout sélectionner)</li>
+          <li>CTRL + C ou CMD + C (Copier)</li>
+          <li>CTRL + V ou CMD + V (Coller dans le client mail)</li>
+        </ol>
+      </div>
     </>
   )
 }
