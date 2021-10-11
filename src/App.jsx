@@ -6,7 +6,7 @@ import Field from '../src/components/Field'
 export default () => {
   const [firstname, setFirstname] = useState('Adonis')
   const [lastname, setLastname] = useState('Karpowicz')
-  const [role, setRole] = useState('Graphic Designer & Art Director')
+  const [role, setRole] = useState('graphic designer & art director')
   const [phone, setPhone] = useState('+32 493 16 46 10')
 
   const signature = useRef(null)
@@ -64,13 +64,13 @@ export default () => {
                   <tr>
                     <td>
                       <img
-                        width="176"
+                        width="120"
                         src={`https://signature-rose.vercel.app${logo}`}
                         style={{ display: 'block' }}
                         alt="Sanserif Logo"
                       />
                     </td>
-                    <td width="64"></td>
+                    <td width="40"></td>
                     <td
                       valign="top"
                       style={{
@@ -109,10 +109,7 @@ export default () => {
                   <tr>
                     <td colSpan="2"></td>
                     <td
-                      style={{
-                        textTransform: 'lowercase',
-                        fontStyle: 'italic'
-                      }}
+                      style={{ fontStyle: 'italic' }}
                     >
                       {role}
                     </td>
